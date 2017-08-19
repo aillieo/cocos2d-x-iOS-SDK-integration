@@ -33,5 +33,7 @@
 
 @property(nonatomic, readonly) RootViewController* viewController;
 
++(RootViewController*) getRootViewController;
+
 @end
 
