@@ -9,7 +9,9 @@
 #include "ScenePrompt.hpp"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-//#include ""
+#include <jni.h>
+#include "platform/android/jni/JniHelper.h"
+#define CLASS_NAME "com/aillieo/cocos2d_x_sdk_integration/ScenePrompt"
 #endif
 
 USING_NS_CC;
@@ -60,6 +62,12 @@ void ScenePrompt::menuCallback(Ref* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 void ScenePrompt::showPrompt()
 {
-    
+    JniMethodInfo t;
+    cocos2d::log("will try call method");
+    if(JniHelper::getStaticMethodInfo(t, CLASS_NAME, "showPrompt", "()V"))
+    {
+        cocos2d::log("has this static method");
+        t.env->CallStaticVoidMethod(t.classID, t.methodID);
+    }
 }
 #endif
