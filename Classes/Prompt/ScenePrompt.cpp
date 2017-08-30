@@ -9,7 +9,7 @@
 #include "ScenePrompt.hpp"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-#include ""
+//#include ""
 #endif
 
 USING_NS_CC;

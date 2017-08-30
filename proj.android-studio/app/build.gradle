@@ -7,7 +7,7 @@ android {
     buildToolsVersion "25.0.0"
 
     defaultConfig {
-        applicationId "com.aillieo.cocos2d-x-sdk-integration"
+        applicationId "com.aillieo.cocos2d_x_sdk_integration"
         minSdkVersion 10
         targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 1
