@@ -38,6 +38,8 @@
 // cocos2d application instance
 static AppDelegate s_sharedApplication;
 
+static RootViewController* rvc;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     cocos2d::Application *app = cocos2d::Application::getInstance();
@@ -55,6 +57,7 @@ static AppDelegate s_sharedApplication;
     _viewController = [[RootViewController alloc]init];
     _viewController.wantsFullScreenLayout = YES;
     
+    rvc = _viewController;
 
     // Set RootViewController to window
     if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
@@ -142,5 +145,10 @@ static AppDelegate s_sharedApplication;
 }
 #endif
 
+
++(RootViewController*) getRootViewController
+{
+    return rvc;
+}
 
 @end
