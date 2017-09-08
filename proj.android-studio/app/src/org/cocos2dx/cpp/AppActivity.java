@@ -25,5 +25,38 @@ package org.cocos2dx.cpp;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 
+import android.app.AlertDialog;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+
+import com.aillieo.cocos2d_x_sdk_integration.ScenePrompt;
+
 public class AppActivity extends Cocos2dxActivity {
+
+    public static final int SHOW_DIALOG = 0x0001;
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+
+        ScenePrompt.setHandler(m_Handler);
+    }
+
+    private Handler m_Handler = new Handler()
+    {
+        public void handleMessage(Message msg) {
+
+        switch (msg.what)
+        {
+            case SHOW_DIALOG://设置提示框
+
+                AlertDialog.Builder alertDialogBuilder=new AlertDialog.Builder(AppActivity.this);
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.setMessage("message");
+                alertDialog.show();
+
+                break;
+        }
+    }
+    };
 }
