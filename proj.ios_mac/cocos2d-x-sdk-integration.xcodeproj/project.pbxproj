@@ -59,8 +59,8 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
-		A38BC7C21F46D45E00FB611F /* ScenePrompt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A38BC7C01F46D45E00FB611F /* ScenePrompt.cpp */; };
-		A38BC7C41F46D49F00FB611F /* ScenePrompt.mm in Sources */ = {isa = PBXBuildFile; fileRef = A38BC7C31F46D49F00FB611F /* ScenePrompt.mm */; };
+		A38BC7C21F46D45E00FB611F /* SceneAlert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A38BC7C01F46D45E00FB611F /* SceneAlert.cpp */; };
+		A38BC7C41F46D49F00FB611F /* SceneAlert.mm in Sources */ = {isa = PBXBuildFile; fileRef = A38BC7C31F46D49F00FB611F /* SceneAlert.mm */; };
 		A38BC7C91F46DC1300FB611F /* SceneBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A38BC7C51F46DC1300FB611F /* SceneBase.cpp */; };
 		A38BC7CA1F46DC1300FB611F /* SceneIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A38BC7C71F46DC1300FB611F /* SceneIndex.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -163,9 +163,9 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		A38BC7C01F46D45E00FB611F /* ScenePrompt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScenePrompt.cpp; path = Prompt/ScenePrompt.cpp; sourceTree = "<group>"; };
-		A38BC7C11F46D45E00FB611F /* ScenePrompt.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ScenePrompt.hpp; path = Prompt/ScenePrompt.hpp; sourceTree = "<group>"; };
-		A38BC7C31F46D49F00FB611F /* ScenePrompt.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ScenePrompt.mm; path = Prompt/ScenePrompt.mm; sourceTree = "<group>"; };
+		A38BC7C01F46D45E00FB611F /* SceneAlert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneAlert.cpp; sourceTree = "<group>"; };
+		A38BC7C11F46D45E00FB611F /* SceneAlert.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SceneAlert.hpp; sourceTree = "<group>"; };
+		A38BC7C31F46D49F00FB611F /* SceneAlert.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneAlert.mm; sourceTree = "<group>"; };
 		A38BC7C51F46DC1300FB611F /* SceneBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneBase.cpp; sourceTree = "<group>"; };
 		A38BC7C61F46DC1300FB611F /* SceneBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneBase.h; sourceTree = "<group>"; };
 		A38BC7C71F46DC1300FB611F /* SceneIndex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneIndex.cpp; sourceTree = "<group>"; };
@@ -316,7 +316,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A38BC7BC1F46D42900FB611F /* Prompt */,
+				A38BC7BC1F46D42900FB611F /* Alert */,
 				A38BC7C51F46DC1300FB611F /* SceneBase.cpp */,
 				A38BC7C61F46DC1300FB611F /* SceneBase.h */,
 				A38BC7C71F46DC1300FB611F /* SceneIndex.cpp */,
@@ -375,14 +375,14 @@
 			path = ios;
 			sourceTree = SOURCE_ROOT;
 		};
-		A38BC7BC1F46D42900FB611F /* Prompt */ = {
+		A38BC7BC1F46D42900FB611F /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				A38BC7C31F46D49F00FB611F /* ScenePrompt.mm */,
-				A38BC7C01F46D45E00FB611F /* ScenePrompt.cpp */,
-				A38BC7C11F46D45E00FB611F /* ScenePrompt.hpp */,
+				A38BC7C31F46D49F00FB611F /* SceneAlert.mm */,
+				A38BC7C01F46D45E00FB611F /* SceneAlert.cpp */,
+				A38BC7C11F46D45E00FB611F /* SceneAlert.hpp */,
 			);
-			name = Prompt;
+			path = Alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,9 +539,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A38BC7C21F46D45E00FB611F /* ScenePrompt.cpp in Sources */,
+				A38BC7C21F46D45E00FB611F /* SceneAlert.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				A38BC7C41F46D49F00FB611F /* ScenePrompt.mm in Sources */,
+				A38BC7C41F46D49F00FB611F /* SceneAlert.mm in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				A38BC7CA1F46DC1300FB611F /* SceneIndex.cpp in Sources */,

@@ -1,18 +1,18 @@
 //
-//  ScenePrompt.hpp
+//  SceneAlert.hpp
 //  cocos2d-x-sdk-integration
 //
 //  Created by Aillieo on 2017/8/18.
 //
 //
 
-#ifndef ScenePrompt_hpp
-#define ScenePrompt_hpp
+#ifndef SceneAlert_hpp
+#define SceneAlert_hpp
 
 #include "cocos2d.h"
 #include "SceneBase.h"
 
-class ScenePrompt : public SceneBase
+class SceneAlert : public SceneBase
 {
 public:
     static SceneBase* createScene();
@@ -25,11 +25,11 @@ public:
 private:
     
     // implement the "static create()" method manually
-    CREATE_FUNC(ScenePrompt);
+    CREATE_FUNC(SceneAlert);
 
 
-    void showPrompt();
+    void showAlert();
     
 };
 
-#endif /* ScenePrompt_hpp */
+#endif /* SceneAlert_hpp */

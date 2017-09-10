@@ -1,17 +1,17 @@
 //
-//  ScenePrompt.mm
+//  SceneAlert.mm
 //  cocos2d-x-sdk-integration
 //
 //  Created by Aillieo on 2017/8/18.
 //
 //
 
-#include "ScenePrompt.hpp"
+#include "SceneAlert.hpp"
 #import "AppController.h"
 
-void ScenePrompt::showPrompt()
+void SceneAlert::showAlert()
 {
-    NSLog(@"showPrompt OC");
+    NSLog(@"showAlert OC");
     
     UIAlertController*alert = [UIAlertController
                                alertControllerWithTitle: @"Title"

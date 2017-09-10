@@ -1,7 +1,7 @@
 #include "SceneIndex.h"
 
 USING_NS_CC;
-#include "ScenePrompt.hpp"
+#include "SceneAlert.hpp"
 
 Scene* SceneIndex::createScene()
 {
@@ -51,7 +51,7 @@ void SceneIndex::menuCallback(Ref* pSender)
     switch (tag) {
         case 1:
         {
-            auto scene = ScenePrompt::createScene();
+            auto scene = SceneAlert::createScene();
             Director::getInstance()->replaceScene(scene);
             break;
         }

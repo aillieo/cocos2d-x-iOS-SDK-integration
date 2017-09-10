@@ -1,28 +1,28 @@
 //
-//  ScenePrompt.cpp
+//  SceneAlert.cpp
 //  cocos2d-x-sdk-integration
 //
 //  Created by Aillieo on 2017/8/18.
 //
 //
 
-#include "ScenePrompt.hpp"
+#include "SceneAlert.hpp"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include <jni.h>
 #include "platform/android/jni/JniHelper.h"
-#define CLASS_NAME "com/aillieo/cocos2d_x_sdk_integration/ScenePrompt"
+#define CLASS_NAME "com/aillieo/cocos2d_x_sdk_integration/SceneAlert"
 #endif
 
 USING_NS_CC;
 
-SceneBase* ScenePrompt::createScene()
+SceneBase* SceneAlert::createScene()
 {
-    return ScenePrompt::create();
+    return SceneAlert::create();
 }
 
 // on "init" you need to initialize your instance
-bool ScenePrompt::init()
+bool SceneAlert::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -31,7 +31,7 @@ bool ScenePrompt::init()
         return false;
     }
     
-    setTitle("ScenePrompt");
+    setTitle("SceneAlert");
     
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
@@ -39,7 +39,7 @@ bool ScenePrompt::init()
     
     auto labelItem = MenuItemLabel::create(
                                            Label::createWithTTF("CLICK ME", "fonts/arial.ttf", 24),
-                                           CC_CALLBACK_1(ScenePrompt::menuCallback, this));
+                                           CC_CALLBACK_1(SceneAlert::menuCallback, this));
     
     
     // create menu, it's an autorelease object
@@ -52,19 +52,19 @@ bool ScenePrompt::init()
 }
 
 
-void ScenePrompt::menuCallback(Ref* pSender)
+void SceneAlert::menuCallback(Ref* pSender)
 {
     
-    showPrompt();
+    showAlert();
     
 }
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-void ScenePrompt::showPrompt()
+void SceneAlert::showAlert()
 {
     JniMethodInfo t;
     cocos2d::log("will try call method");
-    if(JniHelper::getStaticMethodInfo(t, CLASS_NAME, "showPrompt", "()V"))
+    if(JniHelper::getStaticMethodInfo(t, CLASS_NAME, "showAlert", "()V"))
     {
         cocos2d::log("has this static method");
         t.env->CallStaticVoidMethod(t.classID, t.methodID);

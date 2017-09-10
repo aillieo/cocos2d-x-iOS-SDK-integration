@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 
 
-public class ScenePrompt {
+public class SceneAlert {
 
     static private Handler m_handler;
 
@@ -15,10 +15,10 @@ public class ScenePrompt {
     };
 
 
-    public static void showPrompt() {
+    public static void showAlert() {
 
         Message msg = new Message();
-        msg.what=AppActivity.SHOW_DIALOG;
+        msg.what=AppActivity.SHOW_ALERT;
         m_handler.sendMessage(msg);
     }
 

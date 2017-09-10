@@ -34,7 +34,7 @@ import com.aillieo.cocos2d_x_sdk_integration.ScenePrompt;
 
 public class AppActivity extends Cocos2dxActivity {
 
-    public static final int SHOW_DIALOG = 0x0001;
+    public static final int SHOW_ALERT = 0x0001;
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -48,7 +48,7 @@ public class AppActivity extends Cocos2dxActivity {
 
         switch (msg.what)
         {
-            case SHOW_DIALOG://设置提示框
+            case SHOW_ALERT:
 
                 AlertDialog.Builder alertDialogBuilder=new AlertDialog.Builder(AppActivity.this);
                 AlertDialog alertDialog = alertDialogBuilder.create();
