@@ -1,7 +1,7 @@
 #include "SceneIndex.h"
+#include "SceneManager.hpp"
 
 USING_NS_CC;
-#include "SceneAlert.hpp"
 
 Scene* SceneIndex::createScene()
 {
@@ -21,18 +21,24 @@ bool SceneIndex::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-
     
+    auto manager = SceneManager::getInstance();
     
-    auto labelItem = MenuItemLabel::create(
-         Label::createWithTTF("Hello World", "fonts/arial.ttf", 24),
-         CC_CALLBACK_1(SceneIndex::menuCallback, this));
+    auto menu = Menu::create();
+    int maxSceneId = manager->getMaxSceneId();
+    for(int i = 1 ; i <= maxSceneId; i++)
+    {
+        auto labelItem = MenuItemLabel::create(
+                                               Label::createWithTTF(manager->getSceneNameById(i), "fonts/arial.ttf", 20),
+                                               CC_CALLBACK_1(SceneIndex::menuCallback, this));
+        
+        labelItem->setTag(i);
+        
+        menu->addChild(labelItem);
+    }
     
-    labelItem->setTag(1);
-
-    // create menu, it's an autorelease object
-    auto menu = Menu::create(labelItem, NULL);
     menu->setPosition(origin + visibleSize/2);
+    menu->alignItemsVertically();
     this->addChild(menu, 1);
 
 
@@ -42,21 +48,14 @@ bool SceneIndex::init()
 
 void SceneIndex::menuCallback(Ref* pSender)
 {
-    
     Node* node = dynamic_cast<Node*>(pSender);
-    int tag = node->getTag();
+    int id = node->getTag();
     
-    CCLOG("tag = %d",tag);
+    CCLOG("scene id = %d",id);
     
-    switch (tag) {
-        case 1:
-        {
-            auto scene = SceneAlert::createScene();
-            Director::getInstance()->replaceScene(scene);
-            break;
-        }
-        default:
-            break;
+    auto scene = SceneManager::getInstance()->createSceneById(id);
+    if(scene != nullptr)
+    {
+        Director::getInstance()->replaceScene(scene);
     }
-    
 }

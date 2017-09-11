@@ -1,28 +1,28 @@
 //
-//  SceneAlert.cpp
+//  SceneSendText.cpp
 //  cocos2d-x-sdk-integration
 //
-//  Created by Aillieo on 2017/8/18.
+//  Created by Aillieo on 2017/9/11.
 //
 //
 
-#include "SceneAlert.hpp"
+#include "SceneSendText.hpp"
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 #include <jni.h>
 #include "platform/android/jni/JniHelper.h"
-#define CLASS_NAME "com/aillieo/cocos2d_x_sdk_integration/SceneAlert"
+#define CLASS_NAME "com/aillieo/cocos2d_x_sdk_integration/SceneSendText"
 #endif
 
 USING_NS_CC;
 
-SceneBase* SceneAlert::createScene()
+SceneBase* SceneSendText::createScene()
 {
-    return SceneAlert::create();
+    return SceneSendText::create();
 }
 
 // on "init" you need to initialize your instance
-bool SceneAlert::init()
+bool SceneSendText::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -38,7 +38,7 @@ bool SceneAlert::init()
     
     auto labelItem = MenuItemLabel::create(
                                            Label::createWithTTF("CLICK ME", "fonts/arial.ttf", 24),
-                                           CC_CALLBACK_1(SceneAlert::menuCallback, this));
+                                           CC_CALLBACK_1(SceneSendText::menuCallback, this));
     
     
     // create menu, it's an autorelease object
@@ -51,22 +51,16 @@ bool SceneAlert::init()
 }
 
 
-void SceneAlert::menuCallback(Ref* pSender)
+void SceneSendText::menuCallback(Ref* pSender)
 {
     
-    showAlert();
+    sendText();
     
 }
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-void SceneAlert::showAlert()
+void SceneSendText::sendText()
 {
-    JniMethodInfo t;
-    cocos2d::log("will try call method");
-    if(JniHelper::getStaticMethodInfo(t, CLASS_NAME, "showAlert", "()V"))
-    {
-        cocos2d::log("has this static method");
-        t.env->CallStaticVoidMethod(t.classID, t.methodID);
-    }
+
 }
 #endif
