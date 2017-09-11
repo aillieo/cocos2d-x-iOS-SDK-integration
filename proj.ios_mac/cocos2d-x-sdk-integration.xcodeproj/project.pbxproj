@@ -66,6 +66,8 @@
 		A3AD9DA21F665217006E0CAC /* SceneSendText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3AD9D9F1F665217006E0CAC /* SceneSendText.cpp */; };
 		A3AD9DA31F665217006E0CAC /* SceneSendText.mm in Sources */ = {isa = PBXBuildFile; fileRef = A3AD9DA11F665217006E0CAC /* SceneSendText.mm */; };
 		A3AD9DA61F66565F006E0CAC /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3AD9DA41F66565F006E0CAC /* SceneManager.cpp */; };
+		A3AD9DAA1F668D7B006E0CAC /* SceneGetText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3AD9DA81F668D7B006E0CAC /* SceneGetText.cpp */; };
+		A3AD9DAE1F668DD5006E0CAC /* SceneGetText.mm in Sources */ = {isa = PBXBuildFile; fileRef = A3AD9DAD1F668DD5006E0CAC /* SceneGetText.mm */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -178,6 +180,9 @@
 		A3AD9DA11F665217006E0CAC /* SceneSendText.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneSendText.mm; sourceTree = "<group>"; };
 		A3AD9DA41F66565F006E0CAC /* SceneManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneManager.cpp; sourceTree = "<group>"; };
 		A3AD9DA51F66565F006E0CAC /* SceneManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SceneManager.hpp; sourceTree = "<group>"; };
+		A3AD9DA81F668D7B006E0CAC /* SceneGetText.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneGetText.cpp; sourceTree = "<group>"; };
+		A3AD9DA91F668D7B006E0CAC /* SceneGetText.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SceneGetText.hpp; sourceTree = "<group>"; };
+		A3AD9DAD1F668DD5006E0CAC /* SceneGetText.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneGetText.mm; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -402,6 +407,9 @@
 				A3AD9D9F1F665217006E0CAC /* SceneSendText.cpp */,
 				A3AD9DA01F665217006E0CAC /* SceneSendText.hpp */,
 				A3AD9DA11F665217006E0CAC /* SceneSendText.mm */,
+				A3AD9DA81F668D7B006E0CAC /* SceneGetText.cpp */,
+				A3AD9DA91F668D7B006E0CAC /* SceneGetText.hpp */,
+				A3AD9DAD1F668DD5006E0CAC /* SceneGetText.mm */,
 			);
 			path = PassString;
 			sourceTree = "<group>";
@@ -560,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3AD9DAA1F668D7B006E0CAC /* SceneGetText.cpp in Sources */,
 				A38BC7C21F46D45E00FB611F /* SceneAlert.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				A3AD9DA21F665217006E0CAC /* SceneSendText.cpp in Sources */,
@@ -567,6 +576,7 @@
 				A38BC7C41F46D49F00FB611F /* SceneAlert.mm in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				A3AD9DAE1F668DD5006E0CAC /* SceneGetText.mm in Sources */,
 				A38BC7CA1F46DC1300FB611F /* SceneIndex.cpp in Sources */,
 				A3AD9DA61F66565F006E0CAC /* SceneManager.cpp in Sources */,
 				A38BC7C91F46DC1300FB611F /* SceneBase.cpp in Sources */,
