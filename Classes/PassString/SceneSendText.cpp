@@ -44,20 +44,20 @@ bool SceneSendText::init()
     
     // create menu, it's an autorelease object
     auto menu = Menu::create(labelItem, NULL);
-    menu->setPosition(origin + visibleSize/2);
+    menu->setPosition(origin + Point(visibleSize.width/2, visibleSize.height/3));
     this->addChild(menu, 1);
     
     
     
     
     m_str = "";
-    m_editBox = cocos2d::ui::EditBox::create(Size(250,50), Scale9Sprite::create("HelloWorld.png"));
-    m_editBox->setPosition(origin + Point(visibleSize.width/2, visibleSize.height*3/4));
+    m_editBox = cocos2d::ui::EditBox::create(Size(100,18), Scale9Sprite::create("edit_box.png"));
+    m_editBox->setPosition(origin + Point(visibleSize.width/2, visibleSize.height*2/3));
     m_editBox->setFontColor(Color3B(0,0,0));
     m_editBox->setPlaceHolder("input here");
     m_editBox->setMaxLength(100);
     m_editBox->setInputMode(cocos2d::ui::EditBox::InputMode::SINGLE_LINE);
-    m_editBox->setInputFlag(cocos2d::ui::EditBox::InputFlag::INITIAL_CAPS_WORD);
+    //m_editBox->setInputFlag(cocos2d::ui::EditBox::InputFlag::INITIAL_CAPS_WORD);
     m_editBox->setReturnType(cocos2d::ui::EditBox::KeyboardReturnType::DONE);
     m_editBox->setDelegate(this);
     addChild(m_editBox);
@@ -79,22 +79,22 @@ void SceneSendText::menuCallback(Ref* pSender)
 
 void SceneSendText::editBoxEditingDidBegin(cocos2d::ui::EditBox* editBox)
 {
-    
+    log("%s",__func__);
 }
 
 void SceneSendText::editBoxEditingDidEnd(cocos2d::ui::EditBox* editBox)
 {
-    
+    log("%s",__func__);
 }
 
 void SceneSendText::editBoxTextChanged(cocos2d::ui::EditBox* editBox,const std::string &text)
 {
-    
+    log("%s",__func__);
 }
 
 void SceneSendText::editBoxReturn(cocos2d::ui::EditBox *editBox)
 {
-    
+    log("%s",__func__);
 }
 
 
