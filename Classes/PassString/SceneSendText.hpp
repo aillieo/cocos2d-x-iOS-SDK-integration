@@ -40,7 +40,7 @@ private:
     std::string m_str;
     
     
-    void sendText();
+    void sendText(std::string str);
     
 };
 

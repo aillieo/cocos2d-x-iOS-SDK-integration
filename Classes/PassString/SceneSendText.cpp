@@ -72,7 +72,7 @@ bool SceneSendText::init()
 void SceneSendText::menuCallback(Ref* pSender)
 {
     
-    sendText();
+    sendText(m_str);
     
 }
 
@@ -90,6 +90,8 @@ void SceneSendText::editBoxEditingDidEnd(cocos2d::ui::EditBox* editBox)
 void SceneSendText::editBoxTextChanged(cocos2d::ui::EditBox* editBox,const std::string &text)
 {
     log("%s",__func__);
+    
+    m_str = editBox->getText();
 }
 
 void SceneSendText::editBoxReturn(cocos2d::ui::EditBox *editBox)
@@ -99,7 +101,7 @@ void SceneSendText::editBoxReturn(cocos2d::ui::EditBox *editBox)
 
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-void SceneSendText::sendText()
+void SceneSendText::sendText(std::string str)
 {
 
 }
