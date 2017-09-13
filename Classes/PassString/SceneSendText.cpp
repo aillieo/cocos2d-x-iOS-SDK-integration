@@ -103,6 +103,17 @@ void SceneSendText::editBoxReturn(cocos2d::ui::EditBox *editBox)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
 void SceneSendText::sendText(std::string str)
 {
+    JniMethodInfo t;
+    cocos2d::log("will try call method");
+    if(JniHelper::getStaticMethodInfo(t, CLASS_NAME, "sendText", "(Ljava/lang/String;)V"))
+    {
+        cocos2d::log("has this static method");
 
+        jstring jText = t.env->NewStringUTF(str.c_str());
+        t.env->CallStaticVoidMethod(t.classID, t.methodID, jText);
+        t.env->DeleteLocalRef(jText);
+
+    }
+    
 }
 #endif

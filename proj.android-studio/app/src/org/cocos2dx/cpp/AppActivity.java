@@ -36,6 +36,7 @@ import com.aillieo.cocos2d_x_sdk_integration.SceneAlert;
 public class AppActivity extends Cocos2dxActivity {
 
     public static final int SHOW_ALERT = 0x0001;
+    public static final int SEND_TEXT = 0x0002;
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -49,14 +50,23 @@ public class AppActivity extends Cocos2dxActivity {
 
         switch (msg.what)
         {
-            case SHOW_ALERT:
-
-                AlertDialog.Builder alertDialogBuilder=new AlertDialog.Builder(AppActivity.this);
+            case SHOW_ALERT: {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AppActivity.this);
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.setMessage("message");
                 alertDialog.show();
-
+            }
                 break;
+
+            case SEND_TEXT: {
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AppActivity.this);
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                if (msg.obj != null)
+                    alertDialog.setMessage((String) msg.obj);
+                alertDialog.show();
+            }
+                break;
+
         }
     }
     };
