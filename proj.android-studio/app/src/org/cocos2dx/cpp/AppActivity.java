@@ -31,6 +31,7 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.aillieo.cocos2d_x_sdk_integration.SceneAlert;
+import com.aillieo.cocos2d_x_sdk_integration.SceneSendText;
 
 
 public class AppActivity extends Cocos2dxActivity {
@@ -42,6 +43,7 @@ public class AppActivity extends Cocos2dxActivity {
         super.onCreate(savedInstanceState);
 
         SceneAlert.setHandler(m_Handler);
+        SceneSendText.setHandler(m_Handler);
     }
 
     private Handler m_Handler = new Handler()
