@@ -5,8 +5,14 @@ package com.aillieo.cocos2d_x_sdk_integration;
  */
 
 import org.cocos2dx.cpp.AppActivity;
-import android.os.Handler;
-import android.os.Message;
 
 public class SceneGetText {
+
+    public static String getText(String str) {
+
+        StringBuilder sb = new StringBuilder(str);
+        sb.append(" from Android");
+        return sb.toString();
+    }
+
 }

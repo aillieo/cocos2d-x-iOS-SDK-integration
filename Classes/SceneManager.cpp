@@ -9,6 +9,7 @@
 #include "SceneManager.hpp"
 #include "SceneAlert.hpp"
 #include "SceneSendText.hpp"
+#include "SceneGetText.hpp"
 
 SceneManager* SceneManager::instance = nullptr;
 SceneManager* SceneManager::getInstance()
@@ -52,6 +53,9 @@ SceneBase* SceneManager::createSceneById(int id)
         case 2:
             scene = SceneSendText::createScene();
             break;
+        case 3:
+            scene = SceneGetText::createScene();
+            break;
         default:
             break;
     }
@@ -76,6 +80,9 @@ std::string SceneManager::getSceneNameById(int id)
         case 2:
             name = "SceneSendText";
             break;
+        case 3:
+            name = "SceneGetText";
+            break;
         default:
             break;
     }
@@ -85,5 +92,5 @@ std::string SceneManager::getSceneNameById(int id)
 
 int SceneManager::getMaxSceneId()
 {
-    return 2;
+    return 3;
 }

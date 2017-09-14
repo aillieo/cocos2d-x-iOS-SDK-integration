@@ -9,8 +9,10 @@
 #include "SceneGetText.hpp"
 #import "AppController.h"
 
-void SceneGetText::getText()
+std::string SceneGetText::getText(std::string str)
 {
+    NSString * inStr = [NSString stringWithUTF8String:str.c_str()];
+    NSString * outStr = [inStr stringByAppendingString: @" from iOS"];
     
-    
+    return [outStr UTF8String];
 }
