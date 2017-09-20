@@ -10,6 +10,8 @@
 #include "SceneAlert.hpp"
 #include "SceneSendText.hpp"
 #include "SceneGetText.hpp"
+#include "SceneGetImage.hpp"
+#include "SceneLocalNotification.hpp"
 
 SceneManager* SceneManager::instance = nullptr;
 SceneManager* SceneManager::getInstance()
@@ -56,6 +58,12 @@ SceneBase* SceneManager::createSceneById(int id)
         case 3:
             scene = SceneGetText::createScene();
             break;
+        case 4:
+            scene = SceneGetImage::createScene();
+            break;
+        case 5:
+            scene = SceneLocalNotification::createScene();
+            break;
         default:
             break;
     }
@@ -83,6 +91,12 @@ std::string SceneManager::getSceneNameById(int id)
         case 3:
             name = "SceneGetText";
             break;
+        case 4:
+            name = "SceneGetImage";
+            break;
+        case 5:
+            name = "SceneLocalNotification";
+            break;
         default:
             break;
     }
@@ -92,5 +106,5 @@ std::string SceneManager::getSceneNameById(int id)
 
 int SceneManager::getMaxSceneId()
 {
-    return 3;
+    return 5;
 }

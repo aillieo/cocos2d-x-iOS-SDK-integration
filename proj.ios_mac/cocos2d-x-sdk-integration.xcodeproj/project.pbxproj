@@ -64,6 +64,10 @@
 		A38BC7C41F46D49F00FB611F /* SceneAlert.mm in Sources */ = {isa = PBXBuildFile; fileRef = A38BC7C31F46D49F00FB611F /* SceneAlert.mm */; };
 		A38BC7C91F46DC1300FB611F /* SceneBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A38BC7C51F46DC1300FB611F /* SceneBase.cpp */; };
 		A38BC7CA1F46DC1300FB611F /* SceneIndex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A38BC7C71F46DC1300FB611F /* SceneIndex.cpp */; };
+		A3A651AE1F71FE1C00A3D04C /* SceneGetImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3A651AC1F71FE1C00A3D04C /* SceneGetImage.cpp */; };
+		A3A651B51F71FF0C00A3D04C /* SceneLocalNotification.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3A651B31F71FF0C00A3D04C /* SceneLocalNotification.cpp */; };
+		A3A651B81F71FF8000A3D04C /* SceneGetImage.mm in Sources */ = {isa = PBXBuildFile; fileRef = A3A651B71F71FF8000A3D04C /* SceneGetImage.mm */; };
+		A3A651BB1F71FFA700A3D04C /* SceneLocalNotification.mm in Sources */ = {isa = PBXBuildFile; fileRef = A3A651BA1F71FFA700A3D04C /* SceneLocalNotification.mm */; };
 		A3AD9DA21F665217006E0CAC /* SceneSendText.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3AD9D9F1F665217006E0CAC /* SceneSendText.cpp */; };
 		A3AD9DA31F665217006E0CAC /* SceneSendText.mm in Sources */ = {isa = PBXBuildFile; fileRef = A3AD9DA11F665217006E0CAC /* SceneSendText.mm */; };
 		A3AD9DA61F66565F006E0CAC /* SceneManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3AD9DA41F66565F006E0CAC /* SceneManager.cpp */; };
@@ -177,6 +181,12 @@
 		A38BC7C61F46DC1300FB611F /* SceneBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneBase.h; sourceTree = "<group>"; };
 		A38BC7C71F46DC1300FB611F /* SceneIndex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneIndex.cpp; sourceTree = "<group>"; };
 		A38BC7C81F46DC1300FB611F /* SceneIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneIndex.h; sourceTree = "<group>"; };
+		A3A651AC1F71FE1C00A3D04C /* SceneGetImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneGetImage.cpp; sourceTree = "<group>"; };
+		A3A651AD1F71FE1C00A3D04C /* SceneGetImage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SceneGetImage.hpp; sourceTree = "<group>"; };
+		A3A651B31F71FF0C00A3D04C /* SceneLocalNotification.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneLocalNotification.cpp; sourceTree = "<group>"; };
+		A3A651B41F71FF0C00A3D04C /* SceneLocalNotification.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SceneLocalNotification.hpp; sourceTree = "<group>"; };
+		A3A651B71F71FF8000A3D04C /* SceneGetImage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneGetImage.mm; sourceTree = "<group>"; };
+		A3A651BA1F71FFA700A3D04C /* SceneLocalNotification.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneLocalNotification.mm; sourceTree = "<group>"; };
 		A3AD9D9F1F665217006E0CAC /* SceneSendText.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneSendText.cpp; sourceTree = "<group>"; };
 		A3AD9DA01F665217006E0CAC /* SceneSendText.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SceneSendText.hpp; sourceTree = "<group>"; };
 		A3AD9DA11F665217006E0CAC /* SceneSendText.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SceneSendText.mm; sourceTree = "<group>"; };
@@ -332,6 +342,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A3A651AF1F71FE3A00A3D04C /* Notification */,
+				A3A651AA1F71FDED00A3D04C /* Image */,
 				A3AD9D9D1F6651EF006E0CAC /* PassString */,
 				A38BC7BC1F46D42900FB611F /* Alert */,
 				A38BC7C51F46DC1300FB611F /* SceneBase.cpp */,
@@ -402,6 +414,26 @@
 				A38BC7C11F46D45E00FB611F /* SceneAlert.hpp */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		A3A651AA1F71FDED00A3D04C /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A3A651AC1F71FE1C00A3D04C /* SceneGetImage.cpp */,
+				A3A651AD1F71FE1C00A3D04C /* SceneGetImage.hpp */,
+				A3A651B71F71FF8000A3D04C /* SceneGetImage.mm */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		A3A651AF1F71FE3A00A3D04C /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				A3A651B31F71FF0C00A3D04C /* SceneLocalNotification.cpp */,
+				A3A651B41F71FF0C00A3D04C /* SceneLocalNotification.hpp */,
+				A3A651BA1F71FFA700A3D04C /* SceneLocalNotification.mm */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		A3AD9D9D1F6651EF006E0CAC /* PassString */ = {
@@ -579,12 +611,16 @@
 				A3AD9DA31F665217006E0CAC /* SceneSendText.mm in Sources */,
 				A38BC7C41F46D49F00FB611F /* SceneAlert.mm in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				A3A651AE1F71FE1C00A3D04C /* SceneGetImage.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				A3AD9DAE1F668DD5006E0CAC /* SceneGetText.mm in Sources */,
 				A38BC7CA1F46DC1300FB611F /* SceneIndex.cpp in Sources */,
+				A3A651B81F71FF8000A3D04C /* SceneGetImage.mm in Sources */,
 				A3AD9DA61F66565F006E0CAC /* SceneManager.cpp in Sources */,
+				A3A651B51F71FF0C00A3D04C /* SceneLocalNotification.cpp in Sources */,
 				A38BC7C91F46DC1300FB611F /* SceneBase.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				A3A651BB1F71FFA700A3D04C /* SceneLocalNotification.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
