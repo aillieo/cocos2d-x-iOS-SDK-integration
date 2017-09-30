@@ -107,10 +107,12 @@ void SceneGetImage::takeWithCamera()
 // java to c++ callback
 extern "C"
 {
-    void Java_cocos2d_x_sdk_integration_SceneGetImage_onImageSaved(JNIEnv *env,jobject thiz,jstring path)
+    void Java_org_cocos2dx_cpp_AppActivity_onImageSaved(JNIEnv *env,jobject thiz,jstring path)
     {
+        log("onImageSaved from java");
         std::string strPath = JniHelper::jstring2string(path);
-        Director::getInstance()->getScheduler()->performFunctionInCocosThread([=,strPath]()mutable{
+        log("strPath = %s", strPath.c_str());
+        Director::getInstance()->getScheduler()->performFunctionInCocosThread([strPath]()mutable{
             Director::getInstance()->getEventDispatcher()->dispatchCustomEvent("ImagePickEnd",&strPath);
         });
     }
