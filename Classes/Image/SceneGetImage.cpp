@@ -40,7 +40,7 @@ bool SceneGetImage::init()
     
     
     auto menu = Menu::create(labelItemPhoto, labelItemCamera, NULL);
-    menu->setPosition(origin + visibleSize/2);
+    menu->setPosition(origin.x + visibleSize.width/2, origin.y + visibleSize.height/3);
     menu->alignItemsVertically();
     this->addChild(menu, 1);
     
@@ -51,7 +51,7 @@ bool SceneGetImage::init()
 
     m_imageRoot = Node::create();
     addChild(m_imageRoot);
-    m_imageRoot->setPosition(origin + visibleSize/2);
+    m_imageRoot->setPosition(origin.x + visibleSize.width/2, origin.y + visibleSize.height*2/3);
     
     return true;
 }
