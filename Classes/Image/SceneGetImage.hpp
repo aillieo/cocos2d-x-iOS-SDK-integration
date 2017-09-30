@@ -19,12 +19,20 @@ public:
     
     virtual bool init();
     
-    void menuCallback(cocos2d::Ref* pSender);
+    void menuCallbackPhoto(cocos2d::Ref* pSender);
+    
+    void menuCallbackCamera(cocos2d::Ref* pSender);
     
 private:
     
     CREATE_FUNC(SceneGetImage);
     
+    void selectFromPhotos();
+    void takeWithCamera();
+    
+    void onImagePickEnd(cocos2d::EventCustom* event);
+    
+    Node* m_imageRoot;
 };
 
 #endif /* SceneGetImage_hpp */
